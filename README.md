@@ -41,7 +41,7 @@ To deploy the dev using docker compose
 To down the dev env
 
 ```bash
-  docker-compose -f docker-compose.yml -f docker-compose.dev.yml down -v
+  docker-compose -f docker-compose.yml -f docker-compose.dev.yml down 
 ```
 
 To deploy the prod using docker compose
@@ -53,7 +53,7 @@ To deploy the prod using docker compose
 To down the prod env
 
 ```bash
-  docker-compose -f docker-compose.yml -f docker-compose.prod.yml down -v
+  docker-compose -f docker-compose.yml -f docker-compose.prod.yml down 
 ```
 
 To show changes in prov env
