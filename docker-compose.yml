@@ -8,6 +8,7 @@ services:
       - node-app
   node-app:
     build: .
+    image: pushkar231299/node-app
     environment:
       - PORT=3000
     depends_on:
