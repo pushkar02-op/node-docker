@@ -57,8 +57,8 @@ app.use(
 app.use(express.json());
 
 app.get("/api/v1", (req, res) => {
-  res.send("<h2>Hiii</h2>");
-  console.log("hgcv");
+  res.send("<h2> Everything Worked Perfectly</h2>");
+  console.log("It worked");
 });
 //localhost:3000/api/v1/posts/
 app.use("/api/v1/posts", postRouter);

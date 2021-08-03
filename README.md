@@ -84,6 +84,84 @@ To build the image, run
    docker build -t node-docker .
 ```
 
+## API Reference
+
+#### To yest api
+
+```http
+  GET /api/v1/
+```
+
+#### Get all posts
+
+```http
+  GET /api/v1/posts
+```
+
+#### Get post
+
+```http
+  GET /api/v1/posts/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. Id of item to fetch |
+
+#### Create New Post
+
+```http
+  POST /api/v1/posts
+```
+
+| Body    | Type     | Description   |
+| :------ | :------- | :------------ |
+| `title` | `string` | **Required**. |
+| `Body`  | `string` | **Required**. |
+
+#### Update Post
+
+```http
+  PATCH /api/v1/posts/${id}
+```
+
+| Body    | Type     | Description                       |
+| :------ | :------- | :-------------------------------- |
+| `title` | `string` | **Required**.                     |
+| `Body`  | `string` | **Required**.                     |
+| `id`    | `string` | **Required**. Id of item to fetch |
+
+#### Delete Post
+
+```http
+  DELETE /api/v1/posts/${id}
+```
+
+| Body | Type | Description |
+| `id` | `string` | **Required**. Id of item to delete |
+
+#### Signup
+
+```http
+  POST /api/v1/users/signup/
+```
+
+| Body       | Type     | Description   |
+| :--------- | :------- | :------------ |
+| `username` | `string` | **Required**. |
+| `password` | `string` | **Required**. |
+
+#### login
+
+```http
+  POST /api/v1/users/signup/
+```
+
+| Body       | Type     | Description   |
+| :--------- | :------- | :------------ |
+| `username` | `string` | **Required**. |
+| `password` | `string` | **Required**. |
+
 ### CLI commands for docker compose using different files for Dev and Prod
 
 To deploy the dev using docker compose
