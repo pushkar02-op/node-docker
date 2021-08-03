@@ -4,6 +4,60 @@ node docker app
 
 ## Deployment
 
+### Using TERRAFORM
+
+Note:- Terraform CLI must be installed
+
+1. To initial Terraform in your local machine
+
+```bash
+  terraform init
+```
+
+2. TO check the plan
+
+```bash
+  terraform plan
+```
+
+3. To apply the changes
+
+```bash
+  terraform apply --auto-approve
+```
+
+4. To remove everything
+
+```bash
+  terraform destroy --auto-approve
+```
+
+### PRODUCTION deployment using CLI in Linux server
+
+First build the image locally
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml build
+```
+
+Then push the image to Docker Hub
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml push
+```
+
+Then in Prod env, pull the image from Docker Hub
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml pull
+```
+
+Then run the docker-compose
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+```
+
 ## CLI Commands
 
 To deploy this project from command line run
@@ -70,28 +124,16 @@ To directly login in mongo container
   docker exec -it node-docker_mongo_1 mongo -u "username" -p "password"
 ```
 
-### PRODUCTION deployment
+## To configure Terraform
 
-First build the image locally
-
-```bash
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml build
-```
-
-Then push the image to Docker Hub
+1. Install Terraform CLI from https://www.terraform.io/downloads.html
+2. Extract the files in C:Program files
+3. Add the path to system env variables.
+4. To configure AWS download AWS CLI
+5. Run this command to configure your access key and secret key
 
 ```bash
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml push
+  aws configure --profile your_name
 ```
 
-Then in Prod env, pull the image from Docker Hub
-
-```bash
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml pull
-```
-
-Then run the docker-compose
-
-```bash
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
-```
+6. Pass in your details and you are ready to GO.

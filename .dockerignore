@@ -4,3 +4,15 @@ Dockerfile
 .git
 .gitignore
 docker-compose*
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform/
+**/.terraform/
+**/terraform.tfstate.*
+**/terraform.tfstate
+**/.terraform.tfstate.lock.info
+**/.terraform.lock.hcl
+**/*.plan
+**/output/
+**/*-aks-flux/
